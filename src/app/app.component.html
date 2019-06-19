@@ -1,0 +1,54 @@
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+
+<div>
+  <table border="1" class=outerborder >
+    <tr>
+      <th>Catelog</th>
+    </tr>
+    <tr *ngFor="let i of arr1 let n=index">
+      <pre><td>           {{ i.item}}
+                                 <button (click)="Onclick(n)">Add to Cart</button>
+           {{i.price}}
+      </td></pre>
+    </tr>
+  </table>
+
+  
+  <table border="1" class=outerborder1 >
+      <tr>
+        <th>Cart</th>
+      </tr>
+      <tr *ngFor="let cartitems of arr2 let m=index">
+        <pre><td>           {{ cartitems.item}}
+                                   <button (click)="remove(cartitems,m)">Remove</button>
+             {{cartitems.price}}
+        </td></pre>
+      </tr>
+    </table>
+
+
+
+    <table border="1" class=outerborder2 >
+        <tr>
+          <th>Checkout</th>
+        </tr>
+        <tr >
+        <pre><td>Total:{{amount}}  
+
+               
+  <button >placeorder</button>
+               
+          </td></pre>
+      </table>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
